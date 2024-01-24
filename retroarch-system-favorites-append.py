@@ -1,11 +1,21 @@
 import json
 import os
+import sys
 
 BASE_DIR = '.'
 PLAYLISTS_DIR = os.path.join(BASE_DIR, 'playlists')
 FAVORIES_FILE = 'content_favorites.lpl'
 FAVORIES_FILE_PATH = os.path.join(BASE_DIR, FAVORIES_FILE)
 
+warning = input("Warning! This will overwrite relevant playlist files. Continue? (y)es or (n)o...")
+    # friendly reminder
+if warning.lower() != 'y':
+    print("Exiting...")
+    sys.exit(1)
+    # exit if no confirmation
+if warning.lower() == 'y':
+    print("Favorites appended!")
+    # append if 'y'
 
 def read_ipl_file(file_path):
     """
