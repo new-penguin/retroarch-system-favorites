@@ -1,16 +1,5 @@
 import json
 import os
-import sys
-
-warning = input("Warning! This will overwrite relevant playlist files. Continue? (y)es or (n)o...")
-    # friendly reminder
-if warning.lower() != 'y':
-    print("Exiting...")
-    sys.exit(1)
-    # exit if no confirmation
-if warning.lower() == 'y':
-    print("Favorites appended!")
-    # append if 'y'
 
 BASE_DIR = '.'
 PLAYLISTS_DIR = os.path.join(BASE_DIR, 'playlists')
@@ -100,6 +89,7 @@ def main():
     # write data back to the file
     write_ipl_file(favorites_data, FAVORIES_FILE_PATH)
 
+print("Favorites replaced!")
 
 if __name__ == '__main__':
     main()
